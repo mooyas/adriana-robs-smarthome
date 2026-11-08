@@ -12,14 +12,14 @@ export interface HouseLight {
 
 export const houseLights: HouseLight[] = [
   {
-    displayName: "Kitchen",
-    onUrl:
-      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=e9342906-9f8d-4b9c-96ad-b5d2b1d8e8f5&token=a15e68d2-f1c5-4bb1-ab07-6d0c9da2fe86&response=html",
-  },
-  {
     displayName: "Enter Home",
     toggleUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=eece3b4d-3ec8-43f1-8ef0-aa5d28970d83&token=5b06dd86-9ace-4aad-beaa-6f6a1ef5854f&response=html",
+  },
+  {
+    displayName: "Kitchen",
+    onUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=e9342906-9f8d-4b9c-96ad-b5d2b1d8e8f5&token=a15e68d2-f1c5-4bb1-ab07-6d0c9da2fe86&response=html",
   },
   {
     displayName: "Stairs",
