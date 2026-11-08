@@ -13,12 +13,16 @@ npm run dev
 
 ## Configure lights
 
-Edit `src/lights.ts` and add one entry per light. Use the display name and the absolute URL for that light's toggle control:
+Edit `src/lights.ts` to configure the controls and color routines. Add one entry per light, or add entries to `lightColorPresets` for whole-home color routines:
 
 ```ts
 export const houseLights: HouseLight[] = [
   { displayName: "Your light name", toggleUrl: "https://your-control-link.example/" },
   { displayName: "Kitchen", onUrl: "https://your-on-link.example/", offUrl: "https://your-off-link.example/" },
+];
+
+export const lightColorPresets: LightColorPreset[] = [
+  { displayName: "White", color: "#fffdf5", url: "https://your-color-routine.example/" },
 ];
 ```
 

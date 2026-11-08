@@ -10,6 +10,12 @@ export interface HouseLight {
   offUrl?: string;
 }
 
+export interface LightColorPreset {
+  displayName: string;
+  color: string;
+  url: string;
+}
+
 export const houseLights: HouseLight[] = [
   {
     displayName: "Enter Home",
@@ -41,5 +47,18 @@ export const houseLights: HouseLight[] = [
     displayName: "Turn all the lights off",
     toggleUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=71b385cb-bb5f-4328-9192-5df7f1ea0227&token=c58b2e0c-c941-4b39-92b4-096aea741762&response=html",
+  },
+];
+
+export const lightColorPresets: LightColorPreset[] = [
+  {
+    displayName: "White",
+    color: "#fffdf5",
+    url: "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=09399c7b-8e37-4059-a40d-cbf7e244d08b&token=1a49fd25-e046-4945-a99a-b2615a32fcd9&response=html",
+  },
+  {
+    displayName: "Christmas time",
+    color: "linear-gradient(135deg, #d84c5c 0 42%, #fff8e9 42% 56%, #35996b 56%)",
+    url: "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=12a32d11-dfd1-4fb4-8f1b-a71297a1b2e0&token=a97476c0-7c3b-45b8-a62c-9b4964a7c5e4&response=html",
   },
 ];

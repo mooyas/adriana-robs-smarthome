@@ -1,4 +1,4 @@
-import { houseLights } from "./lights";
+import { houseLights, lightColorPresets } from "./lights";
 import heroPhoto from "./assets/hero-photo.jpg";
 
 function LightIcon({ name }: { name: string }) {
@@ -232,6 +232,42 @@ export default function App() {
                 </li>
               );
             })}
+          </ul>
+        </section>
+      )}
+
+      {lightColorPresets.length > 0 && (
+        <section className="controls-section color-section" aria-labelledby="color-title">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">SET THE MOOD</p>
+              <h2 id="color-title">Light colours</h2>
+            </div>
+          </div>
+          <ul className="color-grid" aria-label="Whole-home light color presets">
+            {lightColorPresets.map((preset) => (
+              <li key={preset.displayName}>
+                <button
+                  className="color-preset"
+                  type="button"
+                  onClick={() => runRoutine(preset.url)}
+                  aria-label={`Set all lights to ${preset.displayName.toLowerCase()}`}
+                >
+                  <span
+                    className="color-swatch"
+                    style={{ background: preset.color }}
+                    aria-hidden="true"
+                  />
+                  <span className="control-copy">
+                    <span className="control-name">{preset.displayName}</span>
+                    <span className="control-action">All lights</span>
+                  </span>
+                  <span className="open-symbol">
+                    <ActionIcon action="run" />
+                  </span>
+                </button>
+              </li>
+            ))}
           </ul>
         </section>
       )}
