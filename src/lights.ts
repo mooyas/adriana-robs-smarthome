@@ -32,7 +32,9 @@ export const houseLights: HouseLight[] = [
   },
   {
     displayName: "Dining room",
-    toggleUrl:
+    onUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ea139265-7547-4dbb-9c67-454320062545&token=3603227f-2d6f-43eb-998e-55be06de653b&response=html",
+    offUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ea139265-7547-4dbb-9c67-454320062545&token=3603227f-2d6f-43eb-998e-55be06de653b&response=html",
   },
   {
