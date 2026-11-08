@@ -63,4 +63,9 @@ export const lightColorPresets: LightColorPreset[] = [
     color: "linear-gradient(135deg, #d84c5c 0 42%, #fff8e9 42% 56%, #35996b 56%)",
     url: "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=12a32d11-dfd1-4fb4-8f1b-a71297a1b2e0&token=a97476c0-7c3b-45b8-a62c-9b4964a7c5e4&response=html",
   },
+  {
+    displayName: "Purple",
+    color: "linear-gradient(135deg, #bd8cff, #6836c9)",
+    url: "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=fbaa65f4-5120-49a0-913d-7c9d79dd4b5a&token=d31f2835-119b-476b-84c2-2b154bdac397&response=html",
+  },
 ];
