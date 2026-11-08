@@ -42,9 +42,6 @@ export default function App() {
             Adriana &amp; Robs <span>smarthome</span>
           </h1>
         </div>
-        <div className="hero-sparkle" aria-hidden="true">
-          ✦
-        </div>
       </header>
 
       {houseLights.length === 0 ? (
