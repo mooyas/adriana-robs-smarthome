@@ -27,6 +27,8 @@ export const houseLights: HouseLight[] = [
     displayName: "Stairs",
     onUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=434f20f2-53f9-4ae6-b2d3-539f40d99997&token=4482d911-a7e4-4bd4-a47b-31f6a4ec2082&response=html",
+    offUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=995c111d-a9fb-4c50-90c4-7630f1fca982&token=cd2bf8c1-9c76-458a-b288-b17d82e427a7&response=html",
   },
   {
     displayName: "Dining room",
