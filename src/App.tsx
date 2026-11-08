@@ -33,15 +33,6 @@ export default function App() {
     <main className="dashboard">
       <header className="page-header">
         <img className="hero-photo" src={heroPhoto} alt="" />
-        <div className="header-copy">
-          <p className="eyebrow">
-            <span className="eyebrow-dot" aria-hidden="true" />
-            YOUR HOME, MADE SIMPLE
-          </p>
-          <h1>
-            Adriana &amp; Robs <span>smarthome</span>
-          </h1>
-        </div>
       </header>
 
       {houseLights.length === 0 ? (
@@ -59,7 +50,7 @@ export default function App() {
         <section className="controls-section" aria-labelledby="controls-title">
           <div className="section-heading">
             <div>
-              <p className="section-kicker">ALL IN ONE PLACE</p>
+              <p className="section-kicker">SMART HOME</p>
               <h2 id="controls-title">Your controls</h2>
             </div>
             <span className="count-badge">
