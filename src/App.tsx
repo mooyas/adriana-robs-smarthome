@@ -1,6 +1,86 @@
 import { houseLights } from "./lights";
 import heroPhoto from "./assets/hero-photo.jpg";
 
+function LightIcon({ name }: { name: string }) {
+  const label = name.toLowerCase();
+
+  if (label.includes("enter home")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4.5 20V4.5h11V20M15.5 12h4v8h-4M8 8h4M8 11.5h4M8 15h2" />
+        <circle cx="12.8" cy="16.5" r=".65" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
+  if (label === "home") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="m3 10 9-7 9 7v10.5h-6v-6h-6v6H3z" />
+      </svg>
+    );
+  }
+
+  if (label.includes("stair")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3.5 19.5h5v-4h5v-4h5v-4h2M3.5 19.5V16h5M8.5 15.5v-4h5M13.5 11.5v-4h5" />
+      </svg>
+    );
+  }
+
+  if (label.includes("dining")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M5 10h14v2H5zM7 12v7m10-7v7M8 6v2m4-3v3m4-2v2" />
+        <path d="M4 8.5h16" />
+      </svg>
+    );
+  }
+
+  if (label.includes("turn all") || label.includes("off")) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 3.5v8" />
+        <path d="M7 6.7a8 8 0 1 0 10 0" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9 18h6m-5 3h4m-5-6.2a7 7 0 1 1 6 0c-.8.5-1 1.1-1 1.7h-4c0-.6-.2-1.2-1-1.7Z" />
+      <path d="M12 2v2m8.5 7h-2M5.5 11h-2" />
+    </svg>
+  );
+}
+
+function ActionIcon({ action }: { action: "on" | "off" | "run" }) {
+  if (action === "off") {
+    return (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M10 2.5v6" />
+        <path d="M6.3 4.9a6 6 0 1 0 7.4 0" />
+      </svg>
+    );
+  }
+
+  if (action === "on") {
+    return (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="3.3" />
+        <path d="M10 1.5v2m0 13v2m8.5-8.5h-2m-13 0h-2m14.5-6-1.4 1.4m-9.2 9.2L3.5 16m13 0-1.4-1.4m-9.2-9.2L4.5 4" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 10h13m-5-5 5 5-5 5" />
+    </svg>
+  );
+}
+
 function getSafeToggleUrl(value: string | undefined): string | null {
   if (!value?.trim()) {
     return null;
@@ -38,7 +118,7 @@ export default function App() {
       {houseLights.length === 0 ? (
         <section className="empty-state" aria-labelledby="empty-title">
           <div className="empty-icon" aria-hidden="true">
-            ✦
+            <LightIcon name="Home" />
           </div>
           <h2 id="empty-title">No lights added yet</h2>
           <p>
@@ -72,7 +152,7 @@ export default function App() {
                     <div className="dual-control-card">
                       <div className="dual-control-heading">
                         <span className="light-symbol" aria-hidden="true">
-                          ✦
+                          <LightIcon name={name} />
                         </span>
                         <span className="control-name">{name}</span>
                       </div>
@@ -85,6 +165,7 @@ export default function App() {
                           aria-label={`Turn ${name} on`}
                           aria-describedby={!onUrl ? helpId : undefined}
                         >
+                          <ActionIcon action="on" />
                           On
                         </button>
                         <button
@@ -95,6 +176,7 @@ export default function App() {
                           aria-label={`Turn ${name} off`}
                           aria-describedby={!offUrl ? helpId : undefined}
                         >
+                          <ActionIcon action="off" />
                           Off
                         </button>
                       </div>
@@ -113,14 +195,14 @@ export default function App() {
                       aria-label={`Run ${name} routine`}
                     >
                       <span className="light-symbol" aria-hidden="true">
-                        ✦
+                        <LightIcon name={name} />
                       </span>
                       <span className="control-copy">
                         <span className="control-name">{name}</span>
                         <span className="control-action">Run routine</span>
                       </span>
-                      <span className="open-symbol" aria-hidden="true">
-                        →
+                      <span className="open-symbol">
+                        <ActionIcon action="run" />
                       </span>
                     </button>
                   ) : (
@@ -132,14 +214,14 @@ export default function App() {
                         aria-describedby={helpId}
                       >
                         <span className="light-symbol" aria-hidden="true">
-                          ✦
+                          <LightIcon name={name} />
                         </span>
                         <span className="control-copy">
                           <span className="control-name">{name}</span>
                           <span className="control-action">Link needed</span>
                         </span>
-                        <span className="open-symbol" aria-hidden="true">
-                          ↗
+                        <span className="open-symbol">
+                          <ActionIcon action="run" />
                         </span>
                       </button>
                       <p className="configuration-hint" id={helpId}>

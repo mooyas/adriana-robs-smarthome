@@ -227,6 +227,16 @@ button.light-control:not(:disabled) {
   transition: transform 160ms ease;
 }
 
+.light-symbol svg {
+  width: 25px;
+  height: 25px;
+}
+
+.dual-control-heading .light-symbol svg {
+  width: 23px;
+  height: 23px;
+}
+
 button.light-control:not(:disabled):hover .light-symbol {
   transform: rotate(-8deg) scale(1.06);
 }
@@ -267,6 +277,11 @@ button.light-control:not(:disabled):hover .light-symbol {
     transform 160ms ease;
 }
 
+.open-symbol svg {
+  width: 19px;
+  height: 19px;
+}
+
 button.light-control:not(:disabled):hover .open-symbol {
   transform: translate(2px, -2px);
   background: #fff0f6;
@@ -305,6 +320,10 @@ button.light-control:not(:disabled):hover .open-symbol {
 }
 
 .action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
   min-height: 44px;
   border: 1px solid transparent;
   border-radius: 13px;
@@ -318,6 +337,11 @@ button.light-control:not(:disabled):hover .open-symbol {
     border-color 160ms ease,
     background-color 160ms ease,
     transform 160ms ease;
+}
+
+.action-button svg {
+  width: 17px;
+  height: 17px;
 }
 
 .action-button-off {
@@ -373,6 +397,11 @@ button.light-control:not(:disabled):hover .open-symbol {
   background: linear-gradient(135deg, #fce0eb, #eee6ff 90%);
   color: #a34b78;
   font-size: 1.35rem;
+}
+
+.empty-icon svg {
+  width: 25px;
+  height: 25px;
 }
 
 .empty-state h2 {
