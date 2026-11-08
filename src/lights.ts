@@ -39,6 +39,20 @@ export const houseLights: HouseLight[] = [
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=995c111d-a9fb-4c50-90c4-7630f1fca982&token=cd2bf8c1-9c76-458a-b288-b17d82e427a7&response=html",
   },
   {
+    displayName: "Christmas Tree",
+    onUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=8fa8913c-418d-4665-ba17-3e13f927c668&token=785ed134-ba60-45ba-86fd-3c696b64f29c&response=html",
+    offUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ed0d4bde-bd17-436c-9ac1-0aa29d1fd09e&token=038e8272-57a5-49d5-ab02-9d1e634728e9&response=html",
+  },
+  {
+    displayName: "Wax Melter",
+    onUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=81f3f829-1b52-4d4e-9693-5a38a53ec097&token=26ab16ce-fc0a-4a56-aa4f-0ee7105ecfb9&response=html",
+    offUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=de88c190-4a7d-4702-a3f6-fa2c3988e66d&token=3d2e6e72-d63a-4270-8115-4a7c7f398af0&response=html",
+  },
+  {
     displayName: "Dining room",
     onUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ea139265-7547-4dbb-9c67-454320062545&token=3603227f-2d6f-43eb-998e-55be06de653b&response=html",
