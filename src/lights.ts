@@ -19,8 +19,10 @@ export interface LightColorPreset {
 export const houseLights: HouseLight[] = [
   {
     displayName: "Enter Home",
-    toggleUrl:
+    onUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=eece3b4d-3ec8-43f1-8ef0-aa5d28970d83&token=5b06dd86-9ace-4aad-beaa-6f6a1ef5854f&response=html",
+    offUrl:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=c836e338-504a-4246-b625-8498994405df&token=87cf7c9c-0fcd-479d-996d-a092b9c25306&response=html",
   },
   {
     displayName: "Kitchen",
