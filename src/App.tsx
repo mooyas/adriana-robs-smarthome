@@ -1,4 +1,5 @@
 import { houseLights } from "./lights";
+import heroPhoto from "./assets/hero-photo.jpg";
 
 function getSafeToggleUrl(value: string | undefined): string | null {
   if (!value?.trim()) {
@@ -31,6 +32,7 @@ export default function App() {
   return (
     <main className="dashboard">
       <header className="page-header">
+        <img className="hero-photo" src={heroPhoto} alt="" />
         <div className="header-copy">
           <p className="eyebrow">
             <span className="eyebrow-dot" aria-hidden="true" />
@@ -39,7 +41,6 @@ export default function App() {
           <h1>
             Adriana &amp; Robs <span>smarthome</span>
           </h1>
-          <p className="intro">A little more comfort, just a tap away.</p>
         </div>
         <div className="hero-sparkle" aria-hidden="true">
           ✦

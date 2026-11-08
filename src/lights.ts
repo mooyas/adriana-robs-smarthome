@@ -31,7 +31,6 @@ export const houseLights: HouseLight[] = [
     toggleUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=ea139265-7547-4dbb-9c67-454320062545&token=3603227f-2d6f-43eb-998e-55be06de653b&response=html",
   },
-  { displayName: "Wax melter" },
   {
     displayName: "Turn all the lights off",
     toggleUrl:

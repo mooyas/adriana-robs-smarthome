@@ -31,3 +31,5 @@ Build the production app with `npm run build`.
 The site is published at <https://mooyas.github.io/adriana-robs-smarthome/> using GitHub Pages. Push changes to `main` to build and deploy automatically through `.github/workflows/deploy.yml`.
 
 The links in `src/lights.ts` are included in the public site and repository source. Keep in mind that anyone who can access the site can inspect those routine URLs.
+
+The hero photo is stored in `src/assets/hero-photo.jpg`.
