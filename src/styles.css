@@ -139,12 +139,12 @@ h2 {
   gap: 15px;
   overflow: hidden;
   padding: 17px 19px;
-  border: 1px solid #f0dce5;
+  border: 1px solid #f3d9e5;
   border-radius: 21px;
-  background: rgb(255 255 255 / 82%);
+  background: linear-gradient(135deg, #fff 0%, #fff3f8 100%);
   box-shadow:
-    0 6px 18px rgb(123 59 88 / 6%),
-    inset 0 1px 0 rgb(255 255 255 / 90%);
+    0 8px 20px rgb(123 59 88 / 8%),
+    inset 0 1px 0 rgb(255 255 255 / 95%);
   color: #382b36;
   text-align: left;
   text-decoration: none;
@@ -160,9 +160,17 @@ h2 {
   color: #b54c78;
 }
 
+.light-item:nth-child(4n + 1) .light-control {
+  background: linear-gradient(135deg, #fff 5%, #fff0f6 100%);
+}
+
 .light-item:nth-child(4n + 2) .light-symbol {
   background: linear-gradient(145deg, #e8e4ff, #dcd8ff);
   color: #7063ad;
+}
+
+.light-item:nth-child(4n + 2) .light-control {
+  background: linear-gradient(135deg, #fff 5%, #f0eeff 100%);
 }
 
 .light-item:nth-child(4n + 3) .light-symbol {
@@ -170,9 +178,17 @@ h2 {
   color: #ad7042;
 }
 
+.light-item:nth-child(4n + 3) .light-control {
+  background: linear-gradient(135deg, #fff 5%, #fff4e7 100%);
+}
+
 .light-item:nth-child(4n) .light-symbol {
   background: linear-gradient(145deg, #dff2e9, #ccebdc);
   color: #4e8a70;
+}
+
+.light-item:nth-child(4n) .light-control {
+  background: linear-gradient(135deg, #fff 5%, #eaf8f1 100%);
 }
 
 button.light-control:not(:disabled) {
@@ -180,10 +196,13 @@ button.light-control:not(:disabled) {
 }
 
 .light-control:not(:disabled):hover {
-  transform: translateY(-3px);
-  border-color: #dc9bb7;
-  background: #fffafd;
-  box-shadow: 0 12px 26px rgb(123 59 88 / 12%);
+  transform: translateY(-4px) rotate(-0.4deg);
+  border-color: #dc91b0;
+  box-shadow: 0 15px 28px rgb(123 59 88 / 15%);
+}
+
+.light-control:not(:disabled):active {
+  transform: translateY(-1px) scale(0.985);
 }
 
 .light-control:focus-visible {
@@ -238,7 +257,7 @@ button.light-control:not(:disabled):hover .light-symbol {
   flex: 0 0 31px;
   place-items: center;
   margin-left: auto;
-  border: 1px solid #f0e5eb;
+  border: 1px solid rgb(222 190 207 / 60%);
   border-radius: 11px;
   background: rgb(255 255 255 / 72%);
   color: #a15d7c;
@@ -256,11 +275,11 @@ button.light-control:not(:disabled):hover .open-symbol {
 .dual-control-card {
   min-height: 132px;
   padding: 14px;
-  border: 1px solid #f0dce5;
+  border: 1px solid #f3d9e5;
   border-radius: 21px;
-  background: rgb(255 255 255 / 82%);
+  background: linear-gradient(145deg, #fff 10%, #fff1f6 100%);
   box-shadow:
-    0 6px 18px rgb(123 59 88 / 6%),
+    0 8px 20px rgb(123 59 88 / 8%),
     inset 0 1px 0 rgb(255 255 255 / 90%);
 }
 
@@ -287,10 +306,11 @@ button.light-control:not(:disabled):hover .open-symbol {
 
 .action-button {
   min-height: 44px;
-  border: 1px solid #efd3df;
+  border: 1px solid transparent;
   border-radius: 13px;
-  background: #fff2f7;
-  color: #85435f;
+  background: linear-gradient(135deg, #e6f8ef, #cceedd);
+  box-shadow: 0 3px 8px rgb(76 145 108 / 10%);
+  color: #397251;
   font-size: 0.9rem;
   font-weight: 650;
   cursor: pointer;
@@ -300,10 +320,19 @@ button.light-control:not(:disabled):hover .open-symbol {
     transform 160ms ease;
 }
 
+.action-button-off {
+  background: linear-gradient(135deg, #fff0f5, #ffdce8);
+  box-shadow: 0 3px 8px rgb(181 76 120 / 10%);
+  color: #9c4169;
+}
+
 .action-button:not(:disabled):hover {
-  transform: translateY(-1px);
-  border-color: #db91b0;
-  background: #ffe6ef;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 7px 14px rgb(123 59 88 / 14%);
+}
+
+.action-button:not(:disabled):active {
+  transform: scale(0.97);
 }
 
 .action-button:focus-visible {
@@ -314,6 +343,7 @@ button.light-control:not(:disabled):hover .open-symbol {
 .action-button:disabled {
   border-color: #eee8eb;
   background: #f7f4f5;
+  box-shadow: none;
   color: #9a9097;
   cursor: not-allowed;
 }
