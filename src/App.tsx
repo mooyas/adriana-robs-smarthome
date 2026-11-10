@@ -55,7 +55,16 @@ function LightIcon({ name }: { name: string }) {
   );
 }
 
-function ActionIcon({ action }: { action: "on" | "off" | "run" }) {
+function ActionIcon({ action }: { action: "on" | "off" | "run" | "half" }) {
+  if (action === "half") {
+    return (
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="7.5" />
+        <path d="M10 2.5a7.5 7.5 0 0 0 0 15z" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+
   if (action === "off") {
     return (
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -143,12 +152,15 @@ export default function App() {
               const url = getSafeToggleUrl(light.toggleUrl);
               const onUrl = getSafeToggleUrl(light.onUrl);
               const offUrl = getSafeToggleUrl(light.offUrl);
+              const brightness50Url = getSafeToggleUrl(light.brightness50Url);
               const name = light.displayName.trim() || "Unnamed light";
               const helpId = `light-help-${index}`;
 
               return (
                 <li className="light-item" key={`${name}-${index}`}>
-                  {light.onUrl !== undefined || light.offUrl !== undefined ? (
+                  {light.onUrl !== undefined ||
+                  light.offUrl !== undefined ||
+                  light.brightness50Url !== undefined ? (
                     <div className="dual-control-card">
                       <div className="dual-control-heading">
                         <span className="light-symbol" aria-hidden="true">
@@ -156,7 +168,9 @@ export default function App() {
                         </span>
                         <span className="control-name">{name}</span>
                       </div>
-                      <div className="action-button-row">
+                      <div
+                        className={`action-button-row${light.brightness50Url !== undefined ? " action-button-row-three" : ""}`}
+                      >
                         <button
                           className="action-button action-on"
                           type="button"
@@ -179,6 +193,20 @@ export default function App() {
                           <ActionIcon action="off" />
                           Off
                         </button>
+                        {light.brightness50Url !== undefined && (
+                          <button
+                            className="action-button action-half"
+                            type="button"
+                            disabled={!brightness50Url}
+                            onClick={() =>
+                              brightness50Url && runRoutine(brightness50Url)
+                            }
+                            aria-label={`Set ${name} lights to 50% brightness`}
+                          >
+                            <ActionIcon action="half" />
+                            50%
+                          </button>
+                        )}
                       </div>
                       {(!onUrl || !offUrl) && (
                         <p className="configuration-hint" id={helpId}>

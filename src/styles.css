@@ -319,6 +319,11 @@ button.light-control:not(:disabled):hover .open-symbol {
   gap: 9px;
 }
 
+.action-button-row-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
 .action-button {
   display: flex;
   align-items: center;
@@ -348,6 +353,12 @@ button.light-control:not(:disabled):hover .open-symbol {
   background: linear-gradient(135deg, #fff0f5, #ffdce8);
   box-shadow: 0 3px 8px rgb(181 76 120 / 10%);
   color: #9c4169;
+}
+
+.action-button-half {
+  background: linear-gradient(135deg, #f1eaff, #dfd1ff);
+  box-shadow: 0 3px 8px rgb(112 82 164 / 12%);
+  color: #6747a0;
 }
 
 .action-button:not(:disabled):hover {

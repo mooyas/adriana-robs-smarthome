@@ -1,13 +1,15 @@
 /**
  * Add one object per control. Use `toggleUrl` for a single routine, or
- * `onUrl` and `offUrl` for separate light controls. Keep URLs absolute and
- * use http:// or https://. Missing or invalid action URLs are disabled.
+ * `onUrl` and `offUrl` for separate light controls. `brightness50Url` adds a
+ * 50% brightness action. Keep URLs absolute and use http:// or https://.
+ * Missing or invalid action URLs are disabled.
  */
 export interface HouseLight {
   displayName: string;
   toggleUrl?: string;
   onUrl?: string;
   offUrl?: string;
+  brightness50Url?: string;
 }
 
 export interface LightColorPreset {
@@ -37,6 +39,8 @@ export const houseLights: HouseLight[] = [
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=434f20f2-53f9-4ae6-b2d3-539f40d99997&token=4482d911-a7e4-4bd4-a47b-31f6a4ec2082&response=html",
     offUrl:
       "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=995c111d-a9fb-4c50-90c4-7630f1fca982&token=cd2bf8c1-9c76-458a-b288-b17d82e427a7&response=html",
+    brightness50Url:
+      "https://www.virtualsmarthome.xyz/url_routine_trigger/activate.php?trigger=82fbce55-1b72-418f-a623-2fb24c965c26&token=3d585451-0ff3-46cc-84c8-dff3cbc71c4d&response=html",
   },
   {
     displayName: "Christmas Tree",

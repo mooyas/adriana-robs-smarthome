@@ -19,6 +19,7 @@ Edit `src/lights.ts` to configure the controls and color routines. Add one entry
 export const houseLights: HouseLight[] = [
   { displayName: "Your light name", toggleUrl: "https://your-control-link.example/" },
   { displayName: "Kitchen", onUrl: "https://your-on-link.example/", offUrl: "https://your-off-link.example/" },
+  { displayName: "Stairs", onUrl: "https://your-on-link.example/", offUrl: "https://your-off-link.example/", brightness50Url: "https://your-50-percent-link.example/" },
 ];
 
 export const lightColorPresets: LightColorPreset[] = [
@@ -26,7 +27,7 @@ export const lightColorPresets: LightColorPreset[] = [
 ];
 ```
 
-Use `toggleUrl` for a single routine, or `onUrl` and `offUrl` to show separate On and Off buttons. Replace the example values with your own; links must use `http://` or `https://`. Missing or invalid action URLs are shown as disabled controls with a configuration hint. Configured routines are requested in a temporary hidden frame, so the dashboard stays on the same page and no new tab opens.
+Use `toggleUrl` for a single routine, or `onUrl` and `offUrl` to show separate On and Off buttons. Add `brightness50Url` to include a 50% brightness action. Replace the example values with your own; links must use `http://` or `https://`. Missing or invalid action URLs are shown as disabled controls with a configuration hint. Configured routines are requested in a temporary hidden frame, so the dashboard stays on the same page and no new tab opens.
 
 Build the production app with `npm run build`.
 
